@@ -48,7 +48,8 @@ class Progress(object):
             return {
                 'complete': True,
                 'success': self.result.successful(),
-                'progress': _get_completed_progress()
+                'progress': _get_completed_progress(),
+                'result': self.result.info
             }
         elif self.result.state == PROGRESS_STATE:
             return {
