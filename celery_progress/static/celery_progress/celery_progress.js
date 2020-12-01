@@ -55,7 +55,7 @@ class CeleryProgressBar {
 
     onRetryDefault(progressBarElement, progressBarMessageElement, excMessage, retryWhen) {
         retryWhen = new Date(retryWhen);
-        let message = 'Retrying in ' + Math.round((retryWhen.getTime() - Date.now())/1000) + 's: ' + excMessage;
+        let message = 'Retrying in ' + Math.round((retryWhen.getTime() - Date.now())/1000) + 's: ';
         this.onTaskError(progressBarElement, progressBarMessageElement, message);
     }
 

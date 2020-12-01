@@ -71,12 +71,8 @@ class Progress(object):
         elif self.result.state in ['RETRY', 'REVOKED']:
             if self.result.state == 'RETRY':
                 retry = self.result.info
-                print(retry)
-                print(dir(retry))
-                print(retry.__dict__)
-                when = str(retry.when) if isinstance(retry.when, datetime.datetime) else str(
-                        datetime.datetime.now() + datetime.timedelta(seconds=retry.when))
-                result = {'when': when, 'message': retry.message or str(retry.exc)}
+                when = str(datetime.datetime.now() + datetime.timedelta(seconds=30))
+                result = {'when': when, 'message': str(retry)}
             else:
                 result = 'Task ' + str(self.result.info)
             response.update({
