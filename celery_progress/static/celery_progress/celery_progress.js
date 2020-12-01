@@ -47,9 +47,10 @@ class CeleryProgressBar {
      * Default handler for all errors.
      * @param data - A Response object for HTTP errors, undefined for other errors
      */
-    onErrorDefault(progressBarElement, progressBarMessageElement, excMessage, data) {
+    onErrorDefault(progressBarElement, progressBarMessageElement, excMessage) {
         progressBarElement.style.backgroundColor = this.barColors.error;
         excMessage = excMessage || '';
+        console.log(excMessage)
         progressBarMessageElement.textContent = "Uh-Oh, something went wrong! " + excMessage;
     }
 
